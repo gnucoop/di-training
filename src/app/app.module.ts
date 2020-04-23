@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { DummyModule } from './dummy';
 import { HomeComponent } from './home';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { HomeComponent } from './home';
   ],
   imports: [
     BrowserModule,
-    DummyModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'page1', loadChildren: () => import('./page1').then(m => m.Page1Module)},
