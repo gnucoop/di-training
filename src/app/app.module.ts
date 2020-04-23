@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { Page1Module } from './page1';
-import { Page2Module } from './page2';
+import { DummyModule } from './dummy';
+import { HomeComponent } from './home';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    Page1Module,
-    Page2Module,
+    DummyModule,
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent},
+      {path: 'page1', loadChildren: () => import('./page1').then(m => m.Page1Module)},
+      {path: 'page2', loadChildren: () => import('./page2').then(m => m.Page2Module)},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
