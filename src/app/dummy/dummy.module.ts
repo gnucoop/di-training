@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import {DummyService} from './dummy.service';
-
 @NgModule({
-  providers: [DummyService],
+  providers: [],
 })
 export class DummyModule { }

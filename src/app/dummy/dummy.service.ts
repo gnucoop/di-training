@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 
-@Injectable()
+import {DummyModule} from './dummy.module';
+
+@Injectable({providedIn: DummyModule})
 export class DummyService {
   constructor() {
     console.log(`creo istanza del dummy service`);
